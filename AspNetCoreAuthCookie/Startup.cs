@@ -43,6 +43,11 @@ namespace AspNetCoreAuthCookie
                 options.LoginPath = "/Account/login/";
             });
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Gestores", policy => policy.RequireRole("Admin"));
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

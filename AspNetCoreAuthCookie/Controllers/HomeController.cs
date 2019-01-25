@@ -22,7 +22,8 @@ namespace AspNetCoreAuthCookie.Controllers
 
             return View();
         }
-        
+
+        [Authorize(Policy = "Gestores")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
