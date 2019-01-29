@@ -85,6 +85,7 @@ namespace AspNetCoreAuthCookie.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
+            TempData["MessageLogout"] = "Usuário deslogado com sucesso!!!";
             return RedirectToAction("Login", "Account");
         }
 

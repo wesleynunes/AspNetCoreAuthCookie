@@ -45,7 +45,7 @@ namespace AspNetCoreAuthCookie
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Gestores", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("Gestores", policy => policy.RequireRole("Admin", "Manager"));
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

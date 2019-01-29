@@ -11,15 +11,16 @@ namespace AspNetCoreAuthCookie.Models.ViewModels
     {
         [Required(ErrorMessage = "O campo Usuario é obrigatório")]
         [MaxLength(100, ErrorMessage = "O campo Login recebe no máximo 100 Caracteres")]
-        [DisplayName("Usuário")]
+        [DisplayName("User")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Informe a sua senha")]
         [DataType(DataType.Password)]
         [MinLength(6, ErrorMessage = "A senha deve ter pelo menos 6 caracteres")]
-        [DisplayName("Senha")]
+        [DisplayName("Password")]
         public string Password { get; set; }
 
-        public bool RememberMe { get; set; }
+        public bool ActiveUser { get; set; }
+
     }
 }

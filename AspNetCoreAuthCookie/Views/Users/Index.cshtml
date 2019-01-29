@@ -8,6 +8,21 @@
 <h3>User List</h3>
 <hr />
 
+@if (TempData["MessageUser"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["MessageUser"]
+    </div>
+}
+
+
+@if (TempData["MessageDeletedUser"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["MessageDeletedUser"]
+    </div>
+}
+
 <p>
     <a asp-action="Create" class="btn btn-primary btn-sm">Create New</a>
 </p>
@@ -21,9 +36,6 @@
                 @Html.DisplayNameFor(model => model.ActiveUser)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RememberMe)
-            </th>            
-            <th>
                 @Html.DisplayNameFor(model => model.UserTypes)
             </th>
             <th></th>
@@ -35,12 +47,9 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.UserName)
-                </td>                 
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ActiveUser)
-                </td> 
-                <td>
-                    @Html.DisplayFor(modelItem => item.RememberMe)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.UserTypes)

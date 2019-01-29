@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="UserTypes" class="control-label"></label>
-                <select asp-for="UserTypes" asp-items="Html.GetEnumSelectList<UserType>()" class="form-control"></select>
+                <select asp-for="UserTypes"     asp-items="Html.GetEnumSelectList<UserType>()" class="form-control"></select>
             </div>
             <div class="form-group">
                 <div class="checkbox">
@@ -32,14 +32,7 @@
                         <input asp-for="ActiveUser" /> @Html.DisplayNameFor(model => model.ActiveUser)
                     </label>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
-                    </label>
-                </div>
-            </div>
+            </div>           
             <br/>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-success btn-sm" /> |

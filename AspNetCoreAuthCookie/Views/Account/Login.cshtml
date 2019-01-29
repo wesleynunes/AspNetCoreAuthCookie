@@ -9,6 +9,23 @@
 
 <h4>Login</h4>
 <hr />
+
+@if (TempData["RegisteredUser"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["RegisteredUser"]
+    </div>
+}
+
+@if (TempData["MessageLogout"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["MessageLogout"]
+    </div>
+}
+
+
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Login">
@@ -17,6 +34,7 @@
                 <label asp-for="UserName" class="control-label"></label>
                 <input asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
+                <span asp-validation-for="ActiveUser" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>

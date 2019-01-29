@@ -29,5 +29,11 @@ namespace AspNetCoreAuthCookie.Controllers
         {
             return View();
         }
+
+        [Authorize(Policy = "Gestores")]
+        public IActionResult Policy()
+        {
+            return View();
+        }
     }
 }

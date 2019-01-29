@@ -19,11 +19,22 @@
                 <input asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*closed-fixed não permite altear o campo, type="hidden" ouculta o campo*@
+            @*<div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" closed-fixed type="hidden" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
+            </div>*@          
+            <br />
+            <div class="form-inline">
+                <div class="form-group mb-2">
+                    @*<label>Editar Senha</label>*@ 
+                    <div class="form-group mx-sm-3 mb-2">
+                        <a asp-controller="Users" asp-action="EditPassword" asp-route-id="@Model.UserId" class="btn btn-primary btn-sm">Edit Password: @Model.UserName</a>
+                    </div>
+                </div>               
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="UserTypes" class="control-label"></label>
                 <select asp-for="UserTypes" asp-items="Html.GetEnumSelectList<UserType>()" class="form-control"></select>
@@ -34,15 +45,8 @@
                         <input asp-for="ActiveUser" /> @Html.DisplayNameFor(model => model.ActiveUser)
                     </label>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="checkbox">
-                    <label>
-                        <input asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
-                    </label>
-                </div>
-            </div>
-            <br/>
+            </div>       
+            <br />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-success btn-sm" /> |
                 <a asp-action="Index" class="btn btn-default btn-sm">Back to List</a>

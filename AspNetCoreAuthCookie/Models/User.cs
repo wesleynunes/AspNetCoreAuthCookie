@@ -12,26 +12,23 @@ namespace AspNetCoreAuthCookie.Models
         [Key]
         public int UserId { get; set; }
 
-        [Required(ErrorMessage = "O campo Usuario é obrigatório")]
+        [Required(ErrorMessage = "O campo Usuário é obrigatório")]
         [MaxLength(100, ErrorMessage = "O campo Login recebe no máximo 100 Caracteres")]
-        [DisplayName("Usuário")]
+        [DisplayName("User")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "O campo Senha é obrigatório")]
         [MinLength(6, ErrorMessage = "A senha deve ter pelo menos 6 caracteres")]
-        [DisplayName("Senha")]
+        [DisplayName("Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }       
                 
         [Required(ErrorMessage = "O campo Tipo de Usuário é obrigatório")]
-        [DisplayName("Tipo de Usúario")]
+        [DisplayName("Type of User")]
         public UserType UserTypes { get; set; }
 
         [Required(ErrorMessage = "O campo Ativo de Usuário é obrigatório")]
-        [DisplayName("Usuario Ativo")]
-        public bool ActiveUser { get; set; }
-
-        [DisplayName("Lembre de mim")]
-        public bool RememberMe { get; set; }
+        [DisplayName("Active User")]
+        public bool ActiveUser { get; set; }        
     }
 }

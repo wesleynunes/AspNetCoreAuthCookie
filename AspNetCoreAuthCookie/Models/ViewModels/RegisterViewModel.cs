@@ -11,30 +11,29 @@ namespace AspNetCoreAuthCookie.Models.ViewModels
     {
         [Required(ErrorMessage = "O campo nome é obrigatório")]
         [MaxLength(100, ErrorMessage = "O campo Nome recebe no máximo 100 Caracteres")]
-        [DisplayName("Nome Completo")]
+        [DisplayName("User Name")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "O campo Senha é obrigatório")]
         [MinLength(6, ErrorMessage = "A senha deve ter pelo menos 6 caracteres")]
         [DataType(DataType.Password)]
-        [DisplayName("Senha")]
+        [DisplayName("Password")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "O campo Confrimar Senha é obrigatório")]
         [DataType(DataType.Password)]
         [MinLength(6, ErrorMessage = "A senha deve ter pelo menos 6 caracteres")]
         [Compare(nameof(Password), ErrorMessage = "A senha e a confirmação não estão iguais")]
-        [Display(Name = "Confirmar senha")]
+        [Display(Name = "Confirm password")]
         public string PasswordConfirmation { get; set; }
 
         [Required(ErrorMessage = "O campo Tipo de Usuário é obrigatório")]
-        [DisplayName("Tipo de Usúario")]
+        [DisplayName("Type of User")]
         public UserType UserTypes { get; set; } = UserType.Users;
 
         [Required(ErrorMessage = "O campo Ativo de Usuário é obrigatório")]
-        [DisplayName("Usuario Ativo")]
-        public bool ActiveUser { get; set; } = true;     
-        
-        public bool RememberMe { get; set; } 
+        [DisplayName("Active User")]
+        public bool ActiveUser { get; set; } = true;    
+            
     }
 }
